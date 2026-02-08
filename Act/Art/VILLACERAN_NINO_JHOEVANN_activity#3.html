@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2 class="header">Basic Calculator</h2>
+        
+        <div class="separator"></div>
+        
+        <div class="output" id="output"></div>
+        
+        <div class="separator"></div>
+        
+        <div class="buttons">
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">×</button>
+            <button onclick="calculate('/')">÷</button>
+        </div>
+    </div>
+
+    <script>
+        // Declare variables 5 and 7
+        const a = 5;
+        const b = 7;
+        
+        function calculate(operation) {
+            let result;
+            let operationSymbol;
+            
+            // Perform calculation based on the operation
+            switch(operation) {
+                case '+':
+                    result = a + b;
+                    operationSymbol = '+';
+                    break;
+                case '-':
+                    result = a - b;
+                    operationSymbol = '-';
+                    break;
+                case '*':
+                    result = a * b;
+                    operationSymbol = '×';
+                    break;
+                case '/':
+                    result = a / b;
+                    operationSymbol = '÷';
+                    break;
+                default:
+                    result = 'Error';
+                    operationSymbol = '?';
+            }
+            
+            // Display the calculation and result
+            const output = document.getElementById('output');
+            if (operation === '/') {
+                // For division, show more decimal places
+                output.innerHTML = `${a} ${operationSymbol} ${b} = ${result.toFixed(4)}`;
+            } else {
+                output.innerHTML = `${a} ${operationSymbol} ${b} = ${result}`;
+            }
+        }
+    </script>
+</body>
+</html>

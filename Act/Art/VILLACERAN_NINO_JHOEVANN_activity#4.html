@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Grading System</h2>
+        <div class="grades-display" id="gradesDisplay">
+            Prelim: 75 | Semi: 80 | Final: 90
+        </div>
+        
+        <div class="separator"></div>
+        
+        <button onclick="calculateAverage()">
+            Pinduta kay imo man
+        </button>
+    </div>
+
+    <script>
+        // Declare the three variables
+        const prelim = 75;
+        const semi = 80;
+        const final = 90;
+        
+        function calculateAverage() {
+            // Calculate the average
+            const average = (prelim + semi + final) / 3;
+            
+            // Create the alert message
+            const message = `Prelim: ${prelim} Semi: ${final} Final: ${final}\n` +
+                           `Your Average Grade is: ${average.toFixed(1)}\n` +
+                           `Your a Great Singer !!!`;
+            
+            // Display the result using window.alert()
+            window.alert(message);
+        }
+        
+        // Alternative: You can also use alert() directly without window. prefix
+        // alert() is a method of the window object, but window. is often omitted
+    </script>
+</body>
+</html>
